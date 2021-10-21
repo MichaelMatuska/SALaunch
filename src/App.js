@@ -14,10 +14,10 @@ Amplify.addPluggable(new AmazonAIPredictionsProvider());
 const initialFormState = { name: '', description: '' }
 
 function TextIdentification() {
-  const [response, setResponse] = useState("You can add a photo by uploading directly from the app ")
+  const [response, setResponse] = useState("Gather information from uploading an image...powered by ML! ")
 
   function identifyFromFile(event) {
-    setResponse('identifying text...');
+    setResponse('Gathering information from uploaded image...powered by ML');
     const { target: { files } } = event;
     const [file,] = files || [];
 
@@ -40,7 +40,7 @@ function TextIdentification() {
   return (
     <div className="Text">
       <div>
-        <h3>Text identification</h3>
+        <h3>Image Search!</h3>
         <input type="file" onChange={identifyFromFile}></input>
         <p>{response}</p>
       </div>
@@ -98,28 +98,24 @@ function App() {
 
   return (
     <div className="App">
-      <h1>City of Octank Police Department</h1>
-      <h2>Ticketing and Document Managment </h2>
-      <img src={logo} className="App-logo" alt="logo" />
+      <h1>City of Octank - Police Department</h1>
+      <h2>Ticketing and Document Managment</h2>
+      
+       
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
         placeholder="Ticket ID"
         value={formData.name}
-      />
-      <input
-        type="file"
-        onChange={onChange}
-      />
-      <br/>
-      Identify Text
-      <TextIdentification />
-      <br/>
-      <input
+      />   
+       <input
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
         placeholder="Ticket Notes"
         value={formData.description}
       />
       <button onClick={createNote}>Modify Ticket</button>
+      <br/>
+      
+      <TextIdentification />
       <div style={{marginBottom: 30}}>
       {
         notes.map(note => (
