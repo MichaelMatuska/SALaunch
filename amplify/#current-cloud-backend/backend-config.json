@@ -42,12 +42,41 @@
           "additionalAuthenticationProviders": []
         }
       }
+    },
+    "RestAPIDynamo": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "GetDynamoLambda",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
     }
   },
   "storage": {
     "ImageBucket": {
       "service": "S3",
       "providerPlugin": "awscloudformation"
+    }
+  },
+  "predictions": {
+    "ImageRec": {
+      "providerPlugin": "awscloudformation",
+      "service": "RekognitionAndTextract",
+      "dependsOn": [],
+      "identifyType": "identifyText"
+    }
+  },
+  "function": {
+    "GetDynamoLambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   }
 }

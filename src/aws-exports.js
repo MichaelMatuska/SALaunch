@@ -29,8 +29,26 @@ const awsmobile = {
     "aws_appsync_region": "us-east-1",
     "aws_appsync_authenticationType": "API_KEY",
     "aws_appsync_apiKey": "da2-zt5w2yhqbva43fsud4ijz6mfme",
+    "aws_cloud_logic_custom": [
+        {
+            "name": "RestAPIDynamo",
+            "endpoint": "https://1wjndiybg1.execute-api.us-east-1.amazonaws.com/staging",
+            "region": "us-east-1"
+        }
+    ],
     "aws_user_files_s3_bucket": "awslaunch10212021teammobile155918-staging",
-    "aws_user_files_s3_bucket_region": "us-east-1"
+    "aws_user_files_s3_bucket_region": "us-east-1",
+    "predictions": {
+        "identify": {
+            "identifyText": {
+                "proxy": false,
+                "region": "us-east-1",
+                "defaults": {
+                    "format": "ALL"
+                }
+            }
+        }
+    }
 };
 
 

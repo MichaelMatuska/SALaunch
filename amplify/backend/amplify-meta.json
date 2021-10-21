@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-amplifybc9711dba8564-staging-155918-unauthRole",
       "StackName": "amplify-amplifybc9711dba8564-staging-155918",
       "StackId": "arn:aws:cloudformation:us-east-1:241354060777:stack/amplify-amplifybc9711dba8564-staging-155918/d9305580-3287-11ec-9c7a-0ae6e74961ab",
-      "AmplifyAppId": "dogm3g2wd9m8j"
+      "AmplifyAppId": "dogm3g2wd9m8j",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     }
   },
   "auth": {
@@ -41,7 +42,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/auth/salaunch10125614-cloudformation-template.yml",
         "logicalId": "authsalaunch10125614"
       },
-      "lastPushTimeStamp": "2021-10-21T18:17:14.338Z",
+      "lastPushTimeStamp": "2021-10-21T19:13:26.767Z",
       "output": {
         "UserPoolId": "us-east-1_QIeRqchZT",
         "AppClientIDWeb": "ofr42j7fifd7mabrq9dqkekg3",
@@ -51,7 +52,7 @@
         "IdentityPoolName": "salaunch10125614_identitypool_10125614__staging",
         "UserPoolName": "salaunch10125614_userpool_10125614"
       },
-      "lastPushDirHash": "Fi7u+zbtFVGdNLa86NSkh3uQCRU="
+      "lastPushDirHash": "ewPxINDzQzej8/yC0eW/ZQwzHyk="
     }
   },
   "api": {
@@ -77,8 +78,33 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apisalaunch"
       },
-      "lastPushTimeStamp": "2021-10-21T18:17:17.808Z",
+      "lastPushTimeStamp": "2021-10-21T19:13:26.774Z",
       "lastPushDirHash": "xMLuUrDWRF6q5RhngnjylZzTKJ0="
+    },
+    "RestAPIDynamo": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "GetDynamoLambda",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/api/RestAPIDynamo-cloudformation-template.json",
+        "logicalId": "apiRestAPIDynamo"
+      },
+      "lastPushTimeStamp": "2021-10-21T19:13:26.800Z",
+      "output": {
+        "ApiName": "RestAPIDynamo",
+        "RootUrl": "https://1wjndiybg1.execute-api.us-east-1.amazonaws.com/staging",
+        "ApiId": "1wjndiybg1"
+      },
+      "lastPushDirHash": "ouEz2oTpRWb5Q/Hq0E5DVOb0nks="
     }
   },
   "storage": {
@@ -89,12 +115,57 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
         "logicalId": "storageImageBucket"
       },
-      "lastPushTimeStamp": "2021-10-21T18:17:17.808Z",
+      "lastPushTimeStamp": "2021-10-21T19:13:26.783Z",
       "output": {
         "BucketName": "awslaunch10212021teammobile155918-staging",
         "Region": "us-east-1"
       },
       "lastPushDirHash": "IChJys8cfdORxe1xO/d/5Uh+rFc="
+    }
+  },
+  "predictions": {
+    "ImageRec": {
+      "providerPlugin": "awscloudformation",
+      "service": "RekognitionAndTextract",
+      "dependsOn": [],
+      "identifyType": "identifyText",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/predictions/ImageRec-template.json",
+        "logicalId": "predictionsImageRec"
+      },
+      "lastPushTimeStamp": "2021-10-21T19:13:26.786Z",
+      "output": {
+        "format": "ALL",
+        "region": "us-east-1"
+      },
+      "lastPushDirHash": "ymjB7uPEJi+OA4hlTHqZNmc8Kko="
+    }
+  },
+  "function": {
+    "GetDynamoLambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2021-10-21T19:10:21.374Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2021-10-21T19:10:21.419Z",
+      "distZipFilename": "GetDynamoLambda-5844705446304c4a515a-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-amplifybc9711dba8564-staging-155918-deployment",
+        "s3Key": "amplify-builds/GetDynamoLambda-5844705446304c4a515a-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/function/GetDynamoLambda-cloudformation-template.json",
+        "logicalId": "functionGetDynamoLambda"
+      },
+      "lastPushTimeStamp": "2021-10-21T19:13:26.800Z",
+      "output": {
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:241354060777:function:GetDynamoLambda-staging",
+        "Name": "GetDynamoLambda-staging",
+        "LambdaExecutionRole": "salaunchLambdaRole981fcf3d-staging"
+      },
+      "lastPushDirHash": "qR0HceDqNQpzLtW+4zi2ZI/n/10="
     }
   }
 }

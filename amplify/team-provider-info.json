@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "salaunch10125614": {}
+      },
+      "function": {
+        "GetDynamoLambda": {
+          "deploymentBucketName": "amplify-amplifybc9711dba8564-staging-155918-deployment",
+          "s3Key": "amplify-builds/GetDynamoLambda-5844705446304c4a515a-build.zip"
+        }
       }
     }
   }

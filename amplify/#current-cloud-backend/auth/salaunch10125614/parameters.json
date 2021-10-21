@@ -1,6 +1,6 @@
 {
     "identityPoolName": "salaunch10125614_identitypool_10125614",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "salaun10125614",
     "userPoolName": "salaunch10125614_userpool_10125614",
     "autoVerifiedAttributes": [

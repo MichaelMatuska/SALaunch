@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { API, Storage } from 'aws-amplify';
+import Amplify, { API, Storage, Predictions } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listTicketInputs } from './graphql/queries';
 import { createTicketInput as createNoteMutation, deleteTicketInput as deleteNoteMutation } from './graphql/mutations';
-
+import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions';
+import logo from './logo.svg';
 
 const initialFormState = { name: '', description: '' }
 
@@ -58,6 +59,7 @@ function App() {
     <div className="App">
       <h1>City of Octank Police Department</h1>
       <h2>Ticketing and Document Managment </h2>
+      <img src={logo} className="App-logo" alt="logo" />
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
         placeholder="Ticket ID"

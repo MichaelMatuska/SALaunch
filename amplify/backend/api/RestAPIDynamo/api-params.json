@@ -1,0 +1,41 @@
+{
+  "paths": [
+    {
+      "name": "/items",
+      "lambdaFunction": "GetDynamoLambda",
+      "privacy": {
+        "protected": true,
+        "auth": [
+          "/GET"
+        ],
+        "unauth": [
+          "/GET"
+        ]
+      },
+      "policyResourceName": "/items"
+    }
+  ],
+  "resourceName": "RestAPIDynamo",
+  "apiName": "RestAPIDynamo",
+  "functionArns": [
+    {
+      "lambdaFunction": "GetDynamoLambda"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 1,
+    "authRoleName": "amplify-amplifybc9711dba8564-staging-155918-authRole",
+    "unAuthRoleName": "amplify-amplifybc9711dba8564-staging-155918-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "GetDynamoLambda",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}
