@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header>
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Team Mobile!</h1>
+        <h1>Team Mobile V2!</h1>
       </header>
       <AmplifySignOut />
     </div>
