@@ -7,6 +7,7 @@ export const getTicketInput = /* GraphQL */ `
       id
       name
       description
+      Image
       createdAt
       updatedAt
     }
@@ -23,6 +24,7 @@ export const listTicketInputs = /* GraphQL */ `
         id
         name
         description
+        Image
         createdAt
         updatedAt
       }

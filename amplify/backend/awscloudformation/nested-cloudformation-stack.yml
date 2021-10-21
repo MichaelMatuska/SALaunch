@@ -129,7 +129,41 @@
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
           "DynamoDBEnableServerSideEncryption": false,
           "S3DeploymentBucket": "amplify-amplifybc9711dba8564-staging-155918-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/b63a4881995d8662600acecbe1258eecc5296bba",
+          "S3DeploymentRootKey": "amplify-appsync-files/d64f35d1b8df5c255f480b60f11b6017ce38aa5a",
+          "env": "staging"
+        }
+      }
+    },
+    "storageImageBucket": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+        "Parameters": {
+          "bucketName": "awslaunch10212021teammobile",
+          "authPolicyName": "s3_amplify_1bf9d143",
+          "unauthPolicyName": "s3_amplify_1bf9d143",
+          "authRoleName": {
+            "Ref": "AuthRoleName"
+          },
+          "unauthRoleName": {
+            "Ref": "UnauthRoleName"
+          },
+          "selectedGuestPermissions": "s3:GetObject,s3:ListBucket",
+          "selectedAuthenticatedPermissions": "s3:PutObject,s3:GetObject,s3:ListBucket,s3:DeleteObject",
+          "s3PermissionsAuthenticatedPublic": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+          "s3PublicPolicy": "Public_policy_e4fd6e9f",
+          "s3PermissionsAuthenticatedUploads": "s3:PutObject",
+          "s3UploadsPolicy": "Uploads_policy_e4fd6e9f",
+          "s3PermissionsAuthenticatedProtected": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+          "s3ProtectedPolicy": "Protected_policy_e4fd6e9f",
+          "s3PermissionsAuthenticatedPrivate": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+          "s3PrivatePolicy": "Private_policy_e4fd6e9f",
+          "AuthenticatedAllowList": "ALLOW",
+          "s3ReadPolicy": "read_policy_e4fd6e9f",
+          "s3PermissionsGuestPublic": "DISALLOW",
+          "s3PermissionsGuestUploads": "DISALLOW",
+          "GuestAllowList": "DISALLOW",
+          "triggerFunction": "NONE",
           "env": "staging"
         }
       }

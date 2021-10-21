@@ -10,6 +10,7 @@ export const createTicketInput = /* GraphQL */ `
       id
       name
       description
+      Image
       createdAt
       updatedAt
     }
@@ -24,6 +25,7 @@ export const updateTicketInput = /* GraphQL */ `
       id
       name
       description
+      Image
       createdAt
       updatedAt
     }
@@ -38,6 +40,7 @@ export const deleteTicketInput = /* GraphQL */ `
       id
       name
       description
+      Image
       createdAt
       updatedAt
     }
