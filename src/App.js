@@ -6,8 +6,49 @@ import { listTicketInputs } from './graphql/queries';
 import { createTicketInput as createNoteMutation, deleteTicketInput as deleteNoteMutation } from './graphql/mutations';
 import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions';
 import logo from './logo.svg';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
+Amplify.addPluggable(new AmazonAIPredictionsProvider());
 
 const initialFormState = { name: '', description: '' }
+
+function TextIdentification() {
+  const [response, setResponse] = useState("You can add a photo by uploading directly from the app ")
+
+  function identifyFromFile(event) {
+    setResponse('identifying text...');
+    const { target: { files } } = event;
+    const [file,] = files || [];
+
+    if (!file) {
+      return;
+    }
+    Predictions.identify({
+      text: {
+        source: {
+          file,
+        },
+        format: "PLAIN", // Available options "PLAIN", "FORM", "TABLE", "ALL"
+      }
+    }).then(({text: { fullText }}) => {
+      setResponse(fullText)
+    })
+      .catch(err => setResponse(JSON.stringify(err, null, 2)))
+  }
+
+  return (
+    <div className="Text">
+      <div>
+        <h3>Text identification</h3>
+        <input type="file" onChange={identifyFromFile}></input>
+        <p>{response}</p>
+      </div>
+    </div>
+  );
+}
+
+
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -69,6 +110,10 @@ function App() {
         type="file"
         onChange={onChange}
       />
+      <br/>
+      Identify Text
+      <TextIdentification />
+      <br/>
       <input
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
         placeholder="Ticket Notes"
