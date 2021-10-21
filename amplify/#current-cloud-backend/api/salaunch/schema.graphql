@@ -1,0 +1,5 @@
+type TicketInput @model {
+  id: ID!
+  name: String!
+  description: String
+}
