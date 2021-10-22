@@ -41,7 +41,7 @@ function TextIdentification() {
   return (
     <div className="Text">
       <div>
-        <h3>Image Search!</h3>
+        <h3>Can't read the plate? Let Octank eyes try!</h3>
         <input type="file" onChange={identifyFromFile}></input>
         <p>{response}</p>
       </div>
