@@ -1,6 +1,6 @@
-type TicketInput @model {
+type Note @model {
   id: ID!
   name: String!
   description: String
-  Image: String
+  image: String
 }

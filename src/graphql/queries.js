@@ -1,30 +1,30 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getTicketInput = /* GraphQL */ `
-  query GetTicketInput($id: ID!) {
-    getTicketInput(id: $id) {
+export const getNote = /* GraphQL */ `
+  query GetNote($id: ID!) {
+    getNote(id: $id) {
       id
       name
       description
-      Image
+      image
       createdAt
       updatedAt
     }
   }
 `;
-export const listTicketInputs = /* GraphQL */ `
-  query ListTicketInputs(
-    $filter: ModelTicketInputFilterInput
+export const listNotes = /* GraphQL */ `
+  query ListNotes(
+    $filter: ModelNoteFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listTicketInputs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
         description
-        Image
+        image
         createdAt
         updatedAt
       }

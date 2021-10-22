@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Amplify, { API, Storage, Predictions } from 'aws-amplify';
+import { API } from '@aws-amplify/api';
+import Amplify, { Storage, Predictions } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import { listTicketInputs } from './graphql/queries';
-import { createTicketInput as createNoteMutation, deleteTicketInput as deleteNoteMutation } from './graphql/mutations';
+import { listNotes } from './graphql/queries';
+import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions';
 import logo from './logo.svg';
 import awsconfig from './aws-exports';
@@ -67,8 +68,8 @@ function App() {
   }
 
   async function fetchNotes() {
-    const apiData = await API.graphql({ query: listTicketInputs });
-    const notesFromAPI = apiData.data.listTicketInputs.items;
+    const apiData = await API.graphql({ query: listNotes });
+    const notesFromAPI = apiData.data.listNotes.items;
     await Promise.all(notesFromAPI.map(async note => {
       if (note.image) {
         const image = await Storage.get(note.image);
@@ -76,7 +77,7 @@ function App() {
       }
       return note;
     }))
-    setNotes(apiData.data.listTicketInputs.items);
+    setNotes(apiData.data.listNotes.items);
   }
 
   async function createNote() {
@@ -111,6 +112,10 @@ function App() {
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
         placeholder="Ticket Notes"
         value={formData.description}
+      />
+      <input
+        type="file"
+        onChange={onChange}
       />
       <button onClick={createNote}>Modify Ticket</button>
       <br/>

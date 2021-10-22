@@ -1,46 +1,46 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTicketInput = /* GraphQL */ `
-  mutation CreateTicketInput(
-    $input: CreateTicketInputInput!
-    $condition: ModelTicketInputConditionInput
+export const createNote = /* GraphQL */ `
+  mutation CreateNote(
+    $input: CreateNoteInput!
+    $condition: ModelNoteConditionInput
   ) {
-    createTicketInput(input: $input, condition: $condition) {
+    createNote(input: $input, condition: $condition) {
       id
       name
       description
-      Image
+      image
       createdAt
       updatedAt
     }
   }
 `;
-export const updateTicketInput = /* GraphQL */ `
-  mutation UpdateTicketInput(
-    $input: UpdateTicketInputInput!
-    $condition: ModelTicketInputConditionInput
+export const updateNote = /* GraphQL */ `
+  mutation UpdateNote(
+    $input: UpdateNoteInput!
+    $condition: ModelNoteConditionInput
   ) {
-    updateTicketInput(input: $input, condition: $condition) {
+    updateNote(input: $input, condition: $condition) {
       id
       name
       description
-      Image
+      image
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteTicketInput = /* GraphQL */ `
-  mutation DeleteTicketInput(
-    $input: DeleteTicketInputInput!
-    $condition: ModelTicketInputConditionInput
+export const deleteNote = /* GraphQL */ `
+  mutation DeleteNote(
+    $input: DeleteNoteInput!
+    $condition: ModelNoteConditionInput
   ) {
-    deleteTicketInput(input: $input, condition: $condition) {
+    deleteNote(input: $input, condition: $condition) {
       id
       name
       description
-      Image
+      image
       createdAt
       updatedAt
     }

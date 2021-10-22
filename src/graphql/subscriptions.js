@@ -1,37 +1,37 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateTicketInput = /* GraphQL */ `
-  subscription OnCreateTicketInput {
-    onCreateTicketInput {
+export const onCreateNote = /* GraphQL */ `
+  subscription OnCreateNote {
+    onCreateNote {
       id
       name
       description
-      Image
+      image
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdateTicketInput = /* GraphQL */ `
-  subscription OnUpdateTicketInput {
-    onUpdateTicketInput {
+export const onUpdateNote = /* GraphQL */ `
+  subscription OnUpdateNote {
+    onUpdateNote {
       id
       name
       description
-      Image
+      image
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeleteTicketInput = /* GraphQL */ `
-  subscription OnDeleteTicketInput {
-    onDeleteTicketInput {
+export const onDeleteNote = /* GraphQL */ `
+  subscription OnDeleteNote {
+    onDeleteNote {
       id
       name
       description
-      Image
+      image
       createdAt
       updatedAt
     }

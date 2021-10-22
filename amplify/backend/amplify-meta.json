@@ -42,7 +42,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/auth/salaunch10125614-cloudformation-template.yml",
         "logicalId": "authsalaunch10125614"
       },
-      "lastPushTimeStamp": "2021-10-21T19:13:26.767Z",
+      "lastPushTimeStamp": "2021-10-22T01:44:11.071Z",
       "output": {
         "UserPoolId": "us-east-1_QIeRqchZT",
         "AppClientIDWeb": "ofr42j7fifd7mabrq9dqkekg3",
@@ -78,8 +78,8 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apisalaunch"
       },
-      "lastPushTimeStamp": "2021-10-21T19:13:26.774Z",
-      "lastPushDirHash": "xMLuUrDWRF6q5RhngnjylZzTKJ0="
+      "lastPushTimeStamp": "2021-10-22T01:44:13.839Z",
+      "lastPushDirHash": "QhWXGUMF7RA7hPTaEuahbeV+wvs="
     },
     "RestAPIDynamo": {
       "service": "API Gateway",
@@ -98,7 +98,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/api/RestAPIDynamo-cloudformation-template.json",
         "logicalId": "apiRestAPIDynamo"
       },
-      "lastPushTimeStamp": "2021-10-21T19:13:26.800Z",
+      "lastPushTimeStamp": "2021-10-22T01:44:11.078Z",
       "output": {
         "ApiName": "RestAPIDynamo",
         "RootUrl": "https://1wjndiybg1.execute-api.us-east-1.amazonaws.com/staging",
@@ -115,7 +115,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
         "logicalId": "storageImageBucket"
       },
-      "lastPushTimeStamp": "2021-10-21T19:13:26.783Z",
+      "lastPushTimeStamp": "2021-10-22T01:44:11.081Z",
       "output": {
         "BucketName": "awslaunch10212021teammobile155918-staging",
         "Region": "us-east-1"
@@ -133,7 +133,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/predictions/ImageRec-template.json",
         "logicalId": "predictionsImageRec"
       },
-      "lastPushTimeStamp": "2021-10-21T19:13:26.786Z",
+      "lastPushTimeStamp": "2021-10-22T01:44:11.084Z",
       "output": {
         "format": "ALL",
         "region": "us-east-1"
@@ -158,7 +158,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifybc9711dba8564-staging-155918-deployment/amplify-cfn-templates/function/GetDynamoLambda-cloudformation-template.json",
         "logicalId": "functionGetDynamoLambda"
       },
-      "lastPushTimeStamp": "2021-10-21T19:13:26.800Z",
+      "lastPushTimeStamp": "2021-10-22T01:44:11.088Z",
       "output": {
         "Region": "us-east-1",
         "Arn": "arn:aws:lambda:us-east-1:241354060777:function:GetDynamoLambda-staging",
